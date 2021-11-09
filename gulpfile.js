@@ -5,9 +5,15 @@ const autoprefixer = require("autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const postcss = require("gulp-postcss");
 const browsersync = require("browser-sync");
+const ghPages = require('gulp-gh-pages');
 /*const sourcemaps = require('gulp-sourcemaps');*/
 
 const dist = "./dist";
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
+});
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
