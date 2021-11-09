@@ -1,6 +1,7 @@
-header, div, nav, li{
+header, div, nav, li {
   border: 1px solid white;
 }
-.about{
+
+.about {
   border: 1px solid black;
 }

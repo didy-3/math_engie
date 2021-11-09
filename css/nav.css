@@ -1,0 +1,137 @@
+nav {
+  display: grid;
+  grid-template-areas: 1/5;
+  grid-template-columns: repeat(5, auto);
+  background: #901513;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  margin: 0;
+  top: 0;
+  padding: 2% 0;
+  font-size: 18px;
+}
+nav .burgerMenu {
+  display: none;
+}
+nav ul {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-content: space-between;
+}
+nav ul a:hover {
+  text-decoration-line: underline;
+}
+nav ul li .active-nav {
+  text-decoration-line: underline;
+}
+nav #tel-nav {
+  width: 100%;
+  height: 200%;
+  max-height: 50px;
+  grid-column: 4;
+  background: #FAFAFA;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+  place-self: center start;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  place-items: center end;
+}
+nav #tel-nav a {
+  color: #000000;
+  place-self: center start;
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    grid-template-areas: 5/1;
+    grid-template-rows: repeat(5, auto);
+    background: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin: 0;
+    top: 0;
+    padding: 2% 0;
+    font-size: 18px;
+    /*    * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }*/
+  }
+  nav #tel-nav {
+    display: none;
+  }
+  nav #menu {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, auto) 60%;
+    place-self: start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: #901513;
+    color: white;
+    list-style: none;
+  }
+  nav #menu li {
+    place-items: center start;
+    margin-top: 15%;
+    padding-left: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: rgba(250, 250, 250, 0.3) 1px solid;
+    display: grid;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  nav #menu li .active-nav {
+    text-decoration-line: underline;
+  }
+  nav #menu li a {
+    margin-left: -10%;
+    padding-left: 10%;
+    width: 100%;
+    height: 100%;
+  }
+  nav #menu li a:hover {
+    text-decoration-line: underline;
+  }
+  nav #burgerMenu {
+    background: #901513;
+    padding: 1.5% 1% 1%;
+    place-items: center;
+    overflow: hidden;
+    /*      background: none;*/
+    border: none;
+    display: grid;
+    grid-template-areas: 1/1;
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  nav #burgerMenu #menuIcon {
+    display: block;
+    grid-area: 1/1;
+  }
+  nav #burgerMenu #closeIcon {
+    display: none;
+    grid-area: 1/1;
+  }
+
+  #menu {
+    transform: translateY(-100%);
+  }
+}
