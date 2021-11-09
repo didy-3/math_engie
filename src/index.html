@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репетитор Анжела</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul id="menu">
+            <li class="menuItem"><a href="#about-me">Обо мне</a></li>
+            <li class="menuItem"><a href="#programs">Программы</a></li>
+            <li class="menuItem"><a href="#reviews">Отзывы</a></li>
+            <li class="menuItem"><a href="#faq">Частые вопросы</a></li>
+            <li class="menuItem"><a href="#contacts">Контакты</a></li>
+        </ul>
+        <button type="button" id="burgerMenu">
+            <img id="menuIcon" src="img/icons/ic-menu.svg" alt="">
+            <img id="closeIcon" src="img/icons/close-menu.svg" alt="">
+        </button>
+        <div id="tel-nav">
+            <img draggable="false" src="img/icons/ic_phone-call.png" alt="">
+            <a href="tel:'+7-922-001-99-22'">+7 (922) 001 99 22</a>
+        </div>
+    </nav>
+
+</header>
+<div class="wrapper">
+    <div class="homepage" id="homepage">
+        <img id="main-img" src="img/design/main.png" alt="">
+
+        <h1>
+            
+            <span id="header">АНГЛИЙСКИЙ И МАТЕМАТИКА С ЭНЖИ</span>
+            <span id="sub-header">
+                <br>Со мной English так же easy, как дважды два
+                <br>Инженер-переводчик с CAE&FCE
+            </span>
+        </h1>
+        <div id="hp-icons">
+            <div class="homepage-icons">
+                <img draggable="false" src="img/icons/ic_home.png" alt="ic_home" class="icons" id="ic_home">
+                не выходя из дома
+            </div>
+            <div class="homepage-icons">
+                <img draggable="false" src="img/icons/ic_time.png" alt="ic_time" class="icons" id="ic_time">
+                в удобное время
+            </div>
+            <div class="homepage-icons">
+                <img draggable="false" src="img/icons/ic_contract.png" alt="ic_contract" class="icons" id="ic_contract">
+                договор
+            </div>
+        </div>
+        <div id="greetings_form">
+            <button data-modal-greeting id="greetings-btn" class="btn" type="button">
+                Давай познакомимся
+                <img src="img/icons/ic_greetings.png" alt="ic_greetings">
+            </button>
+            <img src="img/design/arrow%201.svg" alt="" class="arrow_1" id="black-arrow">
+            <img src="img/design/arrow-white.svg" alt="" class="arrow_1" id="white-arrow">
+            <div id="greetings_form_txt">Заполни форму знакомства и получи мой “Список полезных фраз”
+                и “Мини-гайд по дробям” совершенно бесплатно!
+            </div>
+        </div>
+        <div id="signUp">
+            <button data-modal-signUp id="sign-up-btn" class="btn" type="button">
+                Записаться на занятие
+            </button>
+        </div>
+    </div>
+    <div class="about" id="about-me">
+        <img draggable="false" class="bg-img" src="img/design/bg-white.svg" alt="">
+        <img draggable="false" class="bg-img-mobile" src="img/design/bg-white-mobile.svg" alt="">
+        <div class="about-txt" id="about-main-txt">
+            Приветствую!<br>
+            Меня зовут Анжела, я репетитор по математике и английскому языку. Я с детства стремилась стать эрудитом,
+            то есть ориентироваться в различных сферах на уверенном уровне, но сейчас я решила сконцентрировать свое
+            внимание на математике и английском, потому что они мне нравятся больше всех!
+        </div>
+        <img draggable="false" src="img/design/Angela_about.png" alt="" id="about-img">
+        <div class="about-txt" id="knowledge">
+            Опыт более 5 лет<br>
+            Индивидуальный подход<br>
+            Образование:<br>
+            <ul>
+                <li>
+                    Тюменский индустриальный университет, специальность – переводчик в сфере профессиональной
+                    коммуникации, 2017 гг.
+                    Красный диплом (со средним баллом 5,0).
+                </li>
+                <li>
+                    Тюменский индустриальный университет, Строительный институт, специальность – строительство
+                    уникальных зданий и сооружений, инженер, 2020г.
+                </li>
+                <li>
+                    Прошла подготовку экспертов ЕГЭ в 2021 г.
+                </li>
+                <li>
+                    Имею сертификаты CAE (2015 г.), FCE (2013 г.)
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="programs" id="programs">
+        <h1>
+            Выбери программу которая подходит тебе
+        </h1>
+        <div id="offer-container">
+            <div class="offer">
+                <ul>
+                    <li>МАТЕМАТИКА</li>
+                    <li>Подготовка к ЕГЭ (профиль и база)</li>
+                    <li>Подготовка к ОГЭ</li>
+                    <li>Повышение успеваемости для 4-11 классов</li>
+                </ul>
+
+                <span>1000₽</span>
+                <button data-modal-signUp class="btn offer_btn" type="button">
+                    Записаться
+                </button>
+            </div>
+            <div class="offer">
+                <ul>
+                    <li>АНГЛИЙСКИЙ ЯЗЫК</li>
+                    <li>Подготовка к ЕГЭ, ОГЭ</li>
+                    <li>Подготовка к FCE, CAE</li>
+                    <li>Повышение успеваемости для 4-11 классов</li>
+                    <li>Подготовка к олимпиадам</li>
+                </ul>
+                <span>1000₽</span>
+                <button data-modal-signUp class="btn offer_btn" type="button">
+                    Записаться
+                </button>
+            </div>
+            <div class="offer">
+                <ul>
+                    <br><br><br>
+                    <li>АНГЛИЙСКИЙ ЯЗЫК</li>
+                    <li>Разговорный для всех возрастов</li>
+                    <br><br>
+
+                </ul>
+
+                <span>1000₽</span>
+                <button data-modal-signUp class="btn offer_btn" type="button">
+                    Записаться
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="reviews" id="reviews">
+        <img draggable="false" class="bg-img" src="img/design/bg-white.svg" alt="">
+        <img draggable="false" class="bg-img-mobile" src="img/design/bg-white-mobile.svg" alt="">
+        <h1>
+            Отзывы учеников и их родителей
+        </h1>
+        <div class="reviews_slider">
+            <button id="prev-btn" type="button"><img src="img/design/slider-prev.png" alt=""></button>
+            <div class="slider-wrapper">
+                <div class="slider-inner">
+                    <div class="review">
+                        <img src="img/design/review-1.png" alt="отзыв о репетиторе">
+                    </div>
+                    <div class="review">
+                        <img src="img/design/review-2.png" alt="отзыв о репетиторе">
+                    </div>
+                    <div class="review">
+                        <img src="img/design/review-3.png" alt="отзыв о репетиторе">
+                    </div>
+                    <div class="review">
+                        <img src="img/design/review-4.png" alt="отзыв о репетиторе">
+                    </div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-slide-to="1"></li>
+                    <li data-slide-to="2"></li>
+                    <li data-slide-to="3"></li>
+                    <li data-slide-to="4"></li>
+                </ol>
+            </div>
+            <button id="next-btn" type="button"><img draggable="false" src="img/design/slider-next.png" alt=""></button>
+        </div>
+    </div>
+    <div class="faq" id="faq">
+        <h1>
+            Часто задаваемые вопросы (FAQ)
+        </h1>
+        <div class="collapsible-list">
+
+        </div>
+        <img draggable="false" id="faq-img" src="img/design/Angela_faq.png" alt="Анжела - репетитор">
+    </div>
+    <div class="contacts" id="contacts">
+        <img draggable="false" class="bg-img" src="img/design/bg-white.svg" alt="">
+        <img draggable="false" class="bg-img-mobile" src="img/design/bg-white-mobile.svg" alt="">
+        <h1>
+            Остались вопросы?
+        </h1>
+
+        <div class="request">
+            <div class="modal modal-request">
+                <div class="modal-container">
+                    <form>
+                        <h2>Оставь заявку и я свяжусь с тобой</h2>
+                        <input required name="user_name" type="text" placeholder='Имя'>
+                        <input required name="user_phone" type="text" placeholder='Телефон'>
+                        <input name="user_email" type="text" placeholder='Почта'>
+                        <select required name="user_program">
+                            <option value="">Какой предмет вас интересует?</option>
+                            <option value="math">Математика</option>
+                            <option value="eng">Английский</option>
+                            <option value="both">Оба предмета</option>
+                        </select>
+                        <button type="submit">Оставить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="socials">
+            <img id="arrow-contacts" src="img/design/arrow%203.svg" alt="">
+            <div id="txt-me">
+                Напиши мне
+            </div>
+            <div id="phone">
+                Телефон: <a href="tel:'+7-922-001-99-22'"><span>+7 (922) 001 99 22</span></a>
+            </div>
+            <div id="email">
+                E-mail: <a href="mailto:anzhelika969@gmail.com?subject=Вопрос по репетиторству" target="_blank">
+                <span>anzhelika969@gmail.com</span></a>
+            </div>
+            <div class="icons">
+                <a href="viber://chat?number=%2B79220019922" target="_blank">
+                    <img src="img/icons/ic_viber.png" alt="Viber">
+                </a>
+                <a href="https://m.me/anzhelika.slepchenko" target="_blank">
+                    <img src="img/icons/ic_messenger.png" alt="Messenger">
+                </a>
+                <a href="https://wa.me/79220019922" target="_blank">
+                    <img src="img/icons/ic_whatsApp.png" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/angie969" target="_blank">
+                    <img src="img/icons/ic_telegram.png" alt="Telegram">
+                </a>
+                <a href="https://www.instagram.com/math_engie/" target="_blank">
+                    <img src="img/icons/ic_instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup modal modal-request" id="modal-request">
+    <div class="modal-container">
+        <form>
+            <h2>Оставь заявку и я свяжусь с тобой</h2>
+            <input required name="user_name" type="text" placeholder='Имя'>
+            <input required name="user_phone" type="text" placeholder='Телефон'>
+            <input name="user_email" type="text" placeholder='Почта'>
+            <select required name="user_program">
+                <option value="">Какой предмет вас интересует?</option>
+                <option value="math">Математика</option>
+                <option value="eng">Английский</option>
+                <option value="both">Оба предмета</option>
+            </select>
+            <button type="submit">Оставить заявку</button>
+        </form>
+        <div class="modal-close-btn"><img src="img/design/close-modal.png" alt=""></div>
+    </div>
+</div>
+<div class="popup modal modal-greetings">
+    <div class="modal-container">
+        <form>
+            <h2>Оставь информацию о себе и я отправлю “Список полезных фраз” и “Мини-гайд по дробям” тебе в телеграм</h2>
+            <input required name="user_name" type="text" placeholder='Имя'>
+            <input required name="user_city" type="text" placeholder='Город'>
+            <input required name="user_phone" type="text" placeholder='Ник в телеграм или телефон'>
+            <input required name="user_instagram" type="text" placeholder='Ник в инстаграм'>
+            <select required name="user_program">
+                <option value="">Какой предмет тебя интересует?</option>
+                <option value="math">Математика</option>
+                <option value="eng">Английский</option>
+                <option value="both">Оба предмета</option>
+            </select>
+            <select required name="user_class">
+                <option value="">Из какого ты класса?</option>
+                <option value="less8">до 8 класса</option>
+                <option value="8">8 класс</option>
+                <option value="9">9 класс</option>
+                <option value="10">10 класс</option>
+                <option value="11">11 класс</option>
+                <option value="adult">Взрослый</option>
+            </select>
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="modal-close-btn"><img src="img/design/close-modal.png" alt=""></div>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

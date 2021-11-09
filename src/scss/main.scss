@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body{
+  background-color: rgba(144, 21, 19, 1);
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  overflow-y: visible;
+}
+h1{
+  font-size: 30px;
+  line-height: 37px;
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+  display: grid;
+  width: 1024px;
+  margin: 0 auto;
+
+}
+a{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.wrapper{
+  display: grid;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 100px;
+}
+button, h2, select, input{
+  font-family: 'Montserrat', sans-serif;
+  line-height: 22px;
+
+}
+.btn{
+  font-family: 'Montserrat', sans-serif;
+  background: #FAFAFA;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+.bg-img{
+  top: -10%;
+  min-width: 110vw;
+  position: absolute;
+  height: 125%;
+  left: calc(-50vw + 50%);
+  z-index: -10;
+}
+.bg-img-mobile{
+  display: none;
+}
+img{
+  user-select: none;
+}
+
+#programs, #reviews, #faq, #contacts{
+  scroll-margin-top: 5vh;
+}
+#about-me{
+  scroll-margin-top: 15vh;
+}
+
+/*@media only screen and (max-width: 1100px){
+  .wrapper{
+    padding-left: 15%;
+  }
+  .bg-img{
+    left: -15vw;
+    min-width: 120vw;
+  }
+
+}*/
+@media only screen and (max-width: 1024px){
+  .wrapper, .homepage, .about, .programs, .faq, .contacts{
+    max-width: 90vw;
+  }
+  .bg-img{
+    display: none;
+  }
+  .bg-img-mobile{
+    display: grid;
+    width: 113%;
+    top: -5%;
+    position: absolute;
+    height: 110%;
+    left: calc(-15vw + 10%);
+    z-index: -10;
+  }
+  .wrapper{
+    margin-top: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+@media only screen and (max-width: 1024px){
+  html{
+    overflow-x: hidden;
+  }
+  .bg-img{
+    display: none;
+  }
+  .bg-img-mobile{
+    display: grid;
+    width: 113%;
+    top: -5%;
+    position: absolute;
+    height: 110%;
+    left: calc(-15vw + 10%);
+    z-index: -10;
+  }
+  body{
+    font-size: 14px;
+    h1{
+      font-size: 20px;
+    }
+  }
+
+}
+
+
