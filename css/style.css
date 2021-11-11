@@ -1153,7 +1153,6 @@ nav #tel-nav a {
     box-sizing: border-box;
     padding-top: 1rem;
     height: 100vh;
-    margin-top: 10%;
   }
   .homepage h1 {
     padding: 0;
@@ -1166,17 +1165,16 @@ nav #tel-nav a {
   }
   .homepage h1 #header {
     font-weight: 700;
-    position: absolute;
+    /*        position: absolute;*/
     grid-area: 1/1;
     place-self: start;
     font-size: 20px;
     line-height: 24px;
-    width: 70%;
+    width: 100%;
     top: 0;
     margin-top: 3%;
   }
   .homepage h1 #sub-header {
-    padding-top: 5%;
     line-height: 40px;
     grid-area: 2/1/2/span 2;
     font-size: 18px;
