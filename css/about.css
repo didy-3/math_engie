@@ -38,18 +38,17 @@
   .about {
     height: 100vh;
     grid-template-areas: 3/1;
-    /*    grid-template-rows: 40% 15% 45%;*/
     grid-template-columns: 99%;
   }
   .about #about-img {
     position: absolute;
-    top: 22%;
-    right: -10%;
+    top: 20%;
+    right: -13%;
     padding: 0;
     grid-area: 1/1/span 3/1;
     place-self: center end;
     z-index: -1;
-    max-width: 80%;
+    max-width: 70%;
   }
   .about #about-main-txt {
     grid-area: 1/1;
@@ -68,5 +67,8 @@
   }
   .about #knowledge li {
     padding-bottom: 5px;
+  }
+  .about span {
+    font-weight: 700;
   }
 }

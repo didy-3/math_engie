@@ -4,7 +4,6 @@
 
 .modal-container {
   display: grid;
-  /*  place-items: center;*/
   grid-template-columns: repeat(2, auto);
   place-self: center;
 }
@@ -91,5 +90,10 @@
   .modal-close-btn {
     grid-area: 1/1;
     place-self: end;
+  }
+
+  .modal-greetings form h2 {
+    font-size: 16px;
+    line-height: 16px;
   }
 }

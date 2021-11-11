@@ -14,17 +14,42 @@ nav {
 nav #burgerMenu {
   display: none;
 }
-nav ul {
+nav #menu {
   grid-column: 2;
   display: grid;
   grid-template-columns: repeat(6, auto);
   justify-content: space-between;
 }
-nav ul a:hover {
-  text-decoration-line: underline;
+nav #menu li a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
-nav ul li .active-nav {
-  text-decoration-line: underline;
+nav #menu li a:hover {
+  color: #FAFAFA;
+}
+nav #menu li a {
+  position: relative;
+  overflow: hidden;
+}
+nav #menu li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #FAFAFA;
+  transition: all 0.2s ease-in-out;
+}
+nav #menu li a:hover::before {
+  width: 100%;
+}
+nav #menu li .active-nav:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #FAFAFA;
 }
 nav #tel-nav {
   width: 100%;
@@ -47,72 +72,71 @@ nav #tel-nav a {
 
 @media only screen and (max-width: 1024px) {
   nav {
-    grid-template-areas: 5/1;
-    grid-template-rows: repeat(5, auto);
-    background: none;
     position: fixed;
     width: 100%;
     z-index: 1;
-    margin: 0;
     top: 0;
-    padding: 2% 0;
     font-size: 18px;
-    /*    * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }*/
+    margin: 0;
+    padding: 0;
   }
   nav #tel-nav {
     display: none;
   }
   nav #menu {
+    padding: 20% 0 0;
     grid-column: 1;
-    display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(6, auto) 60%;
-    place-self: start;
+    grid-template-rows: repeat(5, auto) 45%;
     position: fixed;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 2;
     background: #901513;
     color: white;
     list-style: none;
+    row-gap: 1rem;
   }
   nav #menu li {
-    place-items: center start;
-    margin-top: 15%;
-    padding-left: 10%;
+    grid-template-areas: 1/1;
+    position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border: rgba(250, 250, 250, 0.3) 1px solid;
-    display: grid;
+    background: #FAFAFA;
+    border: black 1px solid;
+    border-radius: 30px;
     font-size: 20px;
-    color: white;
     text-decoration: none;
   }
-  nav #menu li .active-nav {
-    text-decoration-line: underline;
-  }
   nav #menu li a {
-    margin-left: -10%;
-    padding-left: 10%;
+    display: inline-grid;
+    color: black;
     width: 100%;
     height: 100%;
+    text-align: center;
+    place-items: center;
   }
-  nav #menu li a:hover {
+  nav #menu li:hover {
     text-decoration-line: underline;
+  }
+  nav #menu a {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  nav #menu a:hover {
+    color: #FAFAFA;
+  }
+  nav #menu a:before {
+    background: #901513;
   }
   nav #burgerMenu {
     background: #901513;
     padding: 1.5% 1% 1%;
     place-items: center;
     overflow: hidden;
-    /*      background: none;*/
     border: none;
     display: grid;
     grid-template-areas: 1/1;
