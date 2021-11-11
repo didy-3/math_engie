@@ -152,6 +152,9 @@ const faq = () => {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services */ "./src/js/services.js");
+
+
 const forms = (modalToggleDataSelector, modalSelector) => {
   const modalToggle = document.querySelectorAll(modalToggleDataSelector),
         modal = document.querySelector(modalSelector);
@@ -184,10 +187,61 @@ const forms = (modalToggleDataSelector, modalSelector) => {
   });
   document.addEventListener('keydown', e => {
     if (e.code === 'Escape' && (modal.style.display = 'grid')) closeModal();
+  }); //for backend work
+
+  const form = modal.querySelector('form'),
+        inputs = document.querySelectorAll('input, select'),
+        message = {
+    loading: "Идет отправка",
+    send: 'Отправлено',
+    error: 'Ошибка'
+  };
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let statusMessage = document.createElement('h2');
+    statusMessage.classList.add('status');
+    form.append(statusMessage);
+    const formData = new FormData(form);
+    (0,_services__WEBPACK_IMPORTED_MODULE_0__.postData)('../telegram.php', formData).then(res => {
+      console.log(res);
+      statusMessage.innerHTML = message.send;
+    }).catch(() => {
+      statusMessage.innerHTML = message.error;
+    }).finally(() => {
+      inputs.forEach(elem => form.value = '');
+      setTimeout(() => {
+        statusMessage.remove();
+      }, 5000);
+    });
   });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (forms);
+
+/***/ }),
+
+/***/ "./src/js/services.js":
+/*!****************************!*\
+  !*** ./src/js/services.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "postData": function() { return /* binding */ postData; }
+/* harmony export */ });
+const postData = async (url, data) => {
+  let res = await fetch(url, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  });
+  return await res.json();
+};
+
+
 
 /***/ }),
 

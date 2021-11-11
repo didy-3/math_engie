@@ -1346,7 +1346,7 @@ nav #tel-nav a {
 }
 .modal-container form {
   display: grid;
-  padding: 2rem 1rem;
+  padding: 2rem;
   width: 30rem;
   background: #FAFAFA;
   border: 1px solid black;
@@ -1421,7 +1421,7 @@ nav #tel-nav a {
     place-self: center;
   }
   .modal-container form {
-    width: 100vw;
+    width: 100%;
   }
 
   .modal-close-btn {
@@ -1430,8 +1430,13 @@ nav #tel-nav a {
   }
 
   .modal-greetings form h2 {
-    font-size: 16px;
-    line-height: 16px;
+    display: inline-grid;
+    grid-area: 1/1/span 2/1;
+    font-size: 18px;
+    line-height: 20px;
+    place-items: center;
+    height: 100%;
+    padding: 0;
   }
 }
 /*@import "debug";*/
