@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Репетитор Анжела</title>
     <link rel="stylesheet" href="css/style.css">
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
 </head>
 <body>
 <header>
     <nav>
         <ul id="menu">
-            <li class="menuItem"><a href="#about-me">Обо мне</a></li>
-            <li class="menuItem"><a href="#programs">Программы</a></li>
-            <li class="menuItem"><a href="#reviews">Отзывы</a></li>
-            <li class="menuItem"><a href="#faq">Частые вопросы</a></li>
-            <li class="menuItem"><a href="#contacts">Контакты</a></li>
+            <li class="menuItem"><a class="about-nav" href="#about-nav">Обо мне</a></li>
+            <li class="menuItem"><a class="programs-nav" href="#programs-nav">Программы</a></li>
+            <li class="menuItem"><a class="reviews-nav" href="#reviews-nav">Отзывы</a></li>
+            <li class="menuItem"><a class="faq-nav" href="#faq-nav">Частые вопросы</a></li>
+            <li class="menuItem"><a class="contacts-nav" href="#contacts-nav">Контакты</a></li>
         </ul>
         <button type="button" id="burgerMenu">
             <img id="menuIcon" src="img/icons/ic-menu.svg" alt="">
@@ -28,11 +32,11 @@
 
 </header>
 <div class="wrapper">
-    <div class="homepage" id="homepage">
+    <div class="homepage" id="homepage-nav">
         <img id="main-img" src="img/design/main.png" alt="">
 
         <h1>
-            
+
             <span id="header">АНГЛИЙСКИЙ И МАТЕМАТИКА С ЭНЖИ</span>
             <span id="sub-header">
                 <br>Со мной English так же easy, как дважды два
@@ -70,7 +74,7 @@
             </button>
         </div>
     </div>
-    <div class="about" id="about-me">
+    <div class="about" id="about-nav">
         <img draggable="false" class="bg-img" src="img/design/bg-white.svg" alt="">
         <img draggable="false" class="bg-img-mobile" src="img/design/bg-white-mobile.svg" alt="">
         <div class="about-txt" id="about-main-txt">
@@ -81,8 +85,8 @@
         </div>
         <img draggable="false" src="img/design/Angela_about.png" alt="" id="about-img">
         <div class="about-txt" id="knowledge">
-            Опыт более 5 лет<br>
-            Индивидуальный подход<br>
+            <span> Опыт более 5 лет<br>
+                Индивидуальный подход<br> </span>
             Образование:<br>
             <ul>
                 <li>
@@ -104,7 +108,7 @@
         </div>
 
     </div>
-    <div class="programs" id="programs">
+    <div class="programs" id="programs-nav">
         <h1>
             Выбери программу которая подходит тебе
         </h1>
@@ -151,40 +155,34 @@
             </div>
         </div>
     </div>
-    <div class="reviews" id="reviews">
+    <div class="reviews" id="reviews-nav">
         <img draggable="false" class="bg-img" src="img/design/bg-white.svg" alt="">
-        <img draggable="false" class="bg-img-mobile" src="img/design/bg-white-mobile.svg" alt="">
+        <img draggable= "false" class="bg-img-mobile" src="img/design/bg-white-mobile.svg" alt="">
         <h1>
             Отзывы учеников и их родителей
         </h1>
-        <div class="reviews_slider">
-            <button id="prev-btn" type="button"><img src="img/design/slider-prev.png" alt=""></button>
-            <div class="slider-wrapper">
-                <div class="slider-inner">
-                    <div class="review">
-                        <img src="img/design/review-1.png" alt="отзыв о репетиторе">
-                    </div>
-                    <div class="review">
-                        <img src="img/design/review-2.png" alt="отзыв о репетиторе">
-                    </div>
-                    <div class="review">
-                        <img src="img/design/review-3.png" alt="отзыв о репетиторе">
-                    </div>
-                    <div class="review">
-                        <img src="img/design/review-4.png" alt="отзыв о репетиторе">
-                    </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="image" src="img/design/review-1.png" alt="отзыв о репетиторе">
                 </div>
-                <ol class="carousel-indicators">
-                    <li data-slide-to="1"></li>
-                    <li data-slide-to="2"></li>
-                    <li data-slide-to="3"></li>
-                    <li data-slide-to="4"></li>
-                </ol>
+                <div class="swiper-slide">
+                    <img class="image" src="img/design/review-2.png" alt="отзыв о репетиторе">
+                </div>
+                <div class="swiper-slide">
+                    <img class="image" src="img/design/review-3.png" alt="отзыв о репетиторе">
+                </div>
+                <div class="swiper-slide">
+                    <img class="image" src="img/design/review-4.png" alt="отзыв о репетиторе">
+                </div>
             </div>
-            <button id="next-btn" type="button"><img draggable="false" src="img/design/slider-next.png" alt=""></button>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev" id="next-btn"></div>
+            <div class="swiper-button-next" id="prev-btn"></div>
         </div>
     </div>
-    <div class="faq" id="faq">
+
+    <div class="faq" id="faq-nav">
         <h1>
             Часто задаваемые вопросы (FAQ)
         </h1>
@@ -272,7 +270,8 @@
 <div class="popup modal modal-greetings">
     <div class="modal-container">
         <form>
-            <h2>Оставь информацию о себе и я отправлю “Список полезных фраз” и “Мини-гайд по дробям” тебе в телеграм</h2>
+            <h2>Оставь информацию о себе и я отправлю “Список полезных фраз” и “Мини-гайд по дробям” тебе в
+                телеграм</h2>
             <input required name="user_name" type="text" placeholder='Имя'>
             <input required name="user_city" type="text" placeholder='Город'>
             <input required name="user_phone" type="text" placeholder='Ник в телеграм или телефон'>
@@ -297,6 +296,7 @@
         <div class="modal-close-btn"><img src="img/design/close-modal.png" alt=""></div>
     </div>
 </div>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

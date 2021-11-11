@@ -1,5 +1,4 @@
 nav {
-
   display: grid;
   grid-template-areas: 1/5;
   grid-template-columns: repeat(5, auto);
@@ -16,19 +15,46 @@ nav {
     display: none;
   }
 
-  ul {
+  #menu {
     grid-column: 2;
     display: grid;
     grid-template-columns: repeat(6, auto);
     justify-content: space-between;
 
-    a:hover {
-      text-decoration-line: underline;
-    }
-
     li {
-      .active-nav {
-        text-decoration-line: underline;
+
+      a{
+        text-decoration: none;
+        transition: all .2s	ease-in-out;
+        &:hover {
+          color: #FAFAFA;
+        }
+      }
+
+      a{ // Underline Slide In
+        position: relative;
+        overflow: hidden;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background:#FAFAFA;
+          transition: all .2s ease-in-out;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+      }
+      .active-nav:before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background:#FAFAFA;
+
       }
     }
   }
@@ -46,7 +72,6 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, auto);
     place-items: center end;
-
     a {
       color: #000000;
       place-self: center start;
@@ -56,69 +81,72 @@ nav {
 
 @media only screen and (max-width: 1024px) {
   nav {
-    grid-template-areas: 5/1;
-    grid-template-rows: repeat(5, auto);
-    background: none;
     position: fixed;
     width: 100%;
     z-index: 1;
-    margin: 0;
     top: 0;
-    padding: 2% 0;
     font-size: 18px;
-
+    margin: 0;
+    padding: 0;
     #tel-nav {
       display: none;
     }
 
-/*    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }*/
     #menu {
+      padding: 20% 0 0;
       grid-column: 1;
-      display: grid;
       grid-template-columns: 100%;
-      grid-template-rows: repeat(6, auto) 60%;
-      place-self: start;
+      grid-template-rows: repeat(5, auto) 45%;
       position: fixed;
+      height: 100%;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 1;
+      z-index: 2;
       background: rgba(144, 21, 19, 1);
       color: white;
       list-style: none;
+      row-gap: 1rem;
 
       li {
-        place-items: center start;
-        margin-top: 15%;
-        padding-left: 10%;
+        grid-template-areas: 1/1;
+        position: relative;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.2);
-        border: rgba(250, 250, 250, 0.3) 1px solid;
-        display: grid;
+        background: #FAFAFA;
+        border: black 1px solid;
+        border-radius: 30px;
         font-size: 20px;
-        color: white;
         text-decoration: none;
 
-        .active-nav {
-          text-decoration-line: underline;
-        }
-        a{
-          margin-left: -10%;
-          padding-left: 10%;
+        a {
+          display: inline-grid;
+          color: black;
           width: 100%;
           height: 100%;
+          text-align: center;
+          place-items: center;
+        }
+      }
+      li:hover{
+        text-decoration-line: underline;
+      }
+      a{
+        text-decoration: none;
+        transition: all .2s	ease-in-out;
+        &:hover {
+          color: #FAFAFA;
+        }
+      }
+
+      a{ // Underline Slide In
+
+        &:before {
+
+          background: rgba(144, 21, 19, 1);
         }
 
-        a:hover {
-          text-decoration-line: underline;
-
-        }
       }
     }
 
@@ -126,10 +154,7 @@ nav {
       background: rgba(144, 21, 19, 1);
       padding: 1.5% 1% 1%;
       place-items: center;
-
-
       overflow: hidden;
-/*      background: none;*/
       border: none;
       display: grid;
       grid-template-areas: 1/1;
@@ -138,18 +163,20 @@ nav {
       top: 1rem;
       right: 1rem;
       cursor: pointer;
-        #menuIcon{
-          display: block;
-          grid-area: 1/1;
-        }
-        #closeIcon{
-          display: none;
-          grid-area: 1/1;
-        }
+
+      #menuIcon {
+        display: block;
+        grid-area: 1/1;
+      }
+
+      #closeIcon {
+        display: none;
+        grid-area: 1/1;
+      }
     }
 
   }
-  #menu{
+  #menu {
     transform: translateY(-100%);
   }
 }

@@ -15,7 +15,7 @@ const forms = (modalToggleDataSelector, modalSelector) =>{
 
     function showModal() {
         modal.style.display = 'grid';
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'hidden';
         /*clearInterval(modalTimerId)*/
     }
 

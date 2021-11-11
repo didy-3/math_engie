@@ -1,11 +1,9 @@
 .modal {
   display: flex;
-
 }
 
 .modal-container {
   display: grid;
-  /*  place-items: center;*/
   grid-template-columns: repeat(2, auto);
   place-self: center;
 
@@ -49,7 +47,6 @@
 }
 
 
-
 .modal-request {
   display: none;
 
@@ -63,7 +60,8 @@
 
   form {
     grid-template-rows: repeat(8, 1fr);
-    h2{
+
+    h2 {
       font-size: 18px;
       padding-bottom: 15%;
     }
@@ -71,7 +69,6 @@
 }
 
 .popup {
-
   position: fixed;
   top: 0;
   left: 0;
@@ -83,13 +80,14 @@
   background-color: rgba(0, 0, 0, 0.4);
 
 }
+
 .modal-close-btn {
   background: transparent;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px) {
   .modal-container {
     grid-template-areas: 2/1;
     grid-template-rows: repeat(2, auto);
@@ -105,6 +103,12 @@
     grid-area: 1/1;
     place-self: end;
   }
-
-
+  .modal-greetings {
+    form {
+      h2 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
 }

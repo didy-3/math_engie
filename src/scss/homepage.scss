@@ -88,6 +88,7 @@
     box-sizing: border-box;
     padding-top: 1rem;
     height: 100vh;
+    margin-top: 10%;
 
     h1 {
       padding: 0;
@@ -106,7 +107,8 @@
         font-size: 20px;
         line-height: 24px;
         width: 70%;
-
+        top: 0;
+        margin-top: 3%;
       }
 
       #sub-header {
@@ -265,6 +267,7 @@
         margin: 0;
         max-width: 75vw;
         padding: 0;
+        min-height: 50px;
       }
     }
 
@@ -295,6 +298,7 @@
         margin: 0;
         max-width: 75vw;
         padding: 0;
+
       }
     }
 

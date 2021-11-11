@@ -4,97 +4,88 @@
   padding: 5% 0;
   display: grid;
 
-  .reviews_slider {
-    display: grid;
-    grid-template-columns: 1fr 65% 1fr;
-    justify-content: center;
-
-    button {
-      background: none;
-      border: none;
-    }
-
-    #prev-btn {
-      justify-self: end;
-    }
-
-    #next-btn {
-      justify-self: start;
-    }
-  }
-
-  ol {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 2%;
-
-    li {
-      width: 14px;
-      height: 14px;
-      background: rgba(250, 250, 250, 0.1);
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      box-sizing: content-box;
-      border-radius: 30px;
-
-      .active {
-        background: rgba(0, 0, 0, 0.5);
-      }
-    }
-
-  }
-
   h1 {
     display: grid;
     justify-content: center;
     padding-bottom: 5%;
   }
 
-  .review {
-
-  }
-
-  .slider-wrapper {
+  .swiper {
+    width: 100%;
+    height: 100%;
     border: 1px solid #000000;
-    box-sizing: border-box;
     border-radius: 30px;
-    overflow: hidden;
+    z-index: 0;
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 32px;
+      background: #fff;
+      min-height: 250px;
+      cursor: grab;
+
+      .image {
+        cursor: pointer;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 1;
+      border: 2px solid #000;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #000;
+    }
+
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+      color: black;
+      left: 1.5rem;
+      opacity: 0.7;
+    }
+
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+      color: black;
+      right: 1.5rem;
+      opacity: 0.7;
+    }
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .reviews {
-
     h1 {
       text-align: center;
     }
 
-    .reviews_slider {
+    .swiper {
+      width: 90vw;
+      height: 60%;
+      border: 1px solid #000000;
+      border-radius: 30px;
 
 
-      #prev-btn {
-        grid-area: 1/1;
-        justify-self: start;
-        z-index: 1;
-        opacity: 0;
-        width: 50%;
+      .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        left: 0.1rem;
+        opacity: 0.4;
       }
 
-      #next-btn {
-        grid-area: 1/3;
-        width: 50%;
-        justify-self: end;
-        opacity: 0;
+      .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        right: 0.1rem;
+        opacity: 0.4;
       }
 
-      .slider-wrapper {
-        grid-area: 1/1/1/span 3;
-      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 32px;
+        background: #fff;
+        cursor: grab;
 
-      .review img{
-        object-fit: scale-down;
-        width: 100%;
+        img {
+          width: 100%;
+        }
       }
-
     }
   }
 }
