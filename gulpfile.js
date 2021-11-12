@@ -67,8 +67,16 @@ gulp.task("build-sass", () => {
         .pipe(gulp.dest(dist + '/css'))
         .pipe(browsersync.stream());
 });*/
+gulp.task("copy-backend", () => {
+    gulp.src("./src/*.php")
+        .pipe(gulp.dest(dist));
 
-gulp.task("copy-assets", () => {
+    return gulp.src("./src/*.php")
+        .pipe(gulp.dest(dist))
+        .pipe(browsersync.stream());
+});
+
+gulp.task("copy-img", () => {
     gulp.src("./src/img/icons/**/*.*")
         .pipe(gulp.dest(dist + "/img/icons"));
 
@@ -85,19 +93,22 @@ gulp.task("watch", () => {
     });
 
     gulp.watch("./src/index.html", gulp.parallel("copy-html"));
-    gulp.watch("./src/img/icons/**/*.*", gulp.parallel("copy-assets"));
-    gulp.watch("./src/img/**/*.*", gulp.parallel("copy-assets"));
+    gulp.watch("./src/img/icons/**/*.*", gulp.parallel("copy-img"));
+    gulp.watch("./src/img/**/*.*", gulp.parallel("copy-img"));
+    gulp.watch("./src/img/**/*.*", gulp.parallel("copy-backend"));
     gulp.watch("./src/scss/**/*.scss", gulp.parallel("build-sass"));
     gulp.watch("./src/js/**/*.js", gulp.parallel("build-js"));
 });
 
-gulp.task("build", gulp.parallel("copy-html", "copy-assets", "build-sass", "build-js"));
+gulp.task("build", gulp.parallel("copy-html", "copy-img", "copy-backend", "build-sass", "build-js"));
 
 gulp.task("prod", () => {
     gulp.src("./src/index.html")
         .pipe(gulp.dest(dist));
     gulp.src("./src/img/**/*.*")
         .pipe(gulp.dest(dist + "/img"));
+    gulp.src("./src/.php*")
+        .pipe(gulp.dest(dist));
     gulp.src("./src/img/icons/**/*.*")
         .pipe(gulp.dest(dist + "/img/icons"));
 

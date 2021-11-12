@@ -9,7 +9,7 @@
 
   form {
     display: grid;
-    padding: 2rem 1rem;
+    padding: 2rem;
     width: 30rem;
     background: #FAFAFA;
     border: 1px solid black;
@@ -17,6 +17,7 @@
     border-radius: 30px;
     row-gap: 1rem;
     box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.25);
+
 
     select, input, button, h2 {
       box-sizing: border-box;
@@ -95,7 +96,7 @@
     place-self: center;
 
     form {
-      width: 100vw;
+      width: 100%;
     }
   }
 
@@ -106,8 +107,13 @@
   .modal-greetings {
     form {
       h2 {
-        font-size: 16px;
-        line-height: 16px;
+        display: inline-grid;
+        grid-area: 1/1/span 2/ 1;
+        font-size: 18px;
+        line-height: 20px;
+        place-items: center;
+        height: 100%;
+        padding: 0;
       }
     }
   }

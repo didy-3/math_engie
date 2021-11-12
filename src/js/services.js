@@ -1,13 +1,11 @@
-const postData = async (url, data) => {
+const postData = async (url, data, message) => {
+    document.querySelector('.status').textContent = message.loading;
     let res = await fetch(url, {
         method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
         body: data
     });
 
-    return await res.json();
+    return await res.text();
 };
 
 export {postData};
