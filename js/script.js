@@ -190,7 +190,7 @@ const forms = (modalToggleDataSelector, modalSelector) => {
   }); //for backend work
 
   const form = modal.querySelector('form'),
-        inputs = document.querySelectorAll('input, select'),
+        inputs = modal.querySelectorAll('form input, form select'),
         message = {
     loading: "Идет отправка",
     send: 'Отправлено',
@@ -202,13 +202,12 @@ const forms = (modalToggleDataSelector, modalSelector) => {
     statusMessage.classList.add('status');
     form.append(statusMessage);
     const formData = new FormData(form);
-    (0,_services__WEBPACK_IMPORTED_MODULE_0__.postData)('../telegram.php', formData).then(res => {
-      console.log(res);
+    (0,_services__WEBPACK_IMPORTED_MODULE_0__.postData)('telegram.php', formData, message).then(res => {
       statusMessage.innerHTML = message.send;
     }).catch(() => {
       statusMessage.innerHTML = message.error;
     }).finally(() => {
-      inputs.forEach(elem => form.value = '');
+      inputs.forEach(elem => elem.value = '');
       setTimeout(() => {
         statusMessage.remove();
       }, 5000);
@@ -230,15 +229,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "postData": function() { return /* binding */ postData; }
 /* harmony export */ });
-const postData = async (url, data) => {
+const postData = async (url, data, message) => {
+  document.querySelector('.status').textContent = message.loading;
   let res = await fetch(url, {
     method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
     body: data
   });
-  return await res.json();
+  return await res.text();
 };
 
 
