@@ -79,6 +79,7 @@
   }
   .contacts .socials {
     text-align: center;
+    place-self: center;
     font-size: 20px;
     grid-template-areas: repeat(4, auto)/1;
   }

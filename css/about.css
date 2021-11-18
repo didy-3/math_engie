@@ -72,3 +72,19 @@
     font-weight: 700;
   }
 }
+@media only screen and (max-height: 750px) {
+  .about #knowledge {
+    grid-area: 1/1/span 2/2;
+  }
+}
+@media only screen and (max-height: 600px) {
+  .about {
+    height: 80vh;
+  }
+  .about #about-img {
+    display: none;
+  }
+  .about #knowledge {
+    margin-top: 50%;
+  }
+}
