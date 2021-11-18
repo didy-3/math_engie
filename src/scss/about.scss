@@ -25,19 +25,22 @@
     grid-area: 1/2/span 2/2;
     align-self: center;
     line-height: 32px;
-    ul{
+
+    ul {
       padding-left: 1rem;
       text-align: justify;
       line-height: 22px;
       list-style: '·  ' outside;
     }
-    li{
+
+    li {
       padding-bottom: 5px;
     }
 
   }
 }
-@media only screen and (max-width: 1024px){
+
+@media only screen and (max-width: 1024px) {
 
   .about {
     height: 100vh;
@@ -48,9 +51,9 @@
       position: absolute;
       top: 20%;
       right: -13%;
-      padding:  0;
+      padding: 0;
       grid-area: 1/1/ span 3/1;
-      place-self: center end ;
+      place-self: center end;
       z-index: -1;
       max-width: 70%;
     }
@@ -58,27 +61,54 @@
     #about-main-txt {
       grid-area: 1/1;
       align-self: start;
-
     }
 
     #knowledge {
       grid-area: 3/1;
       align-self: center;
       line-height: 32px;
-      ul{
+
+      ul {
         padding-left: 1rem;
         text-align: justify;
         line-height: 22px;
         list-style: '·  ' outside;
       }
-      li{
+
+      li {
         padding-bottom: 5px;
       }
     }
-    span{
+
+    span {
       font-weight: 700;
     }
   }
 }
 
+@media only screen and (max-height: 750px) {
+  .about {
+
+    #about-img {
+
+    }
+
+    #knowledge {
+      grid-area: 1/1/span 2/2;
+
+    }
+  }
+}
+@media only screen and (max-height: 600px) {
+  .about {
+    height: 80vh;
+    #about-img {
+      display: none;
+    }
+
+    #knowledge {
+      margin-top: 50%;
+    }
+  }
+}
 
