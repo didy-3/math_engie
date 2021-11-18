@@ -86,16 +86,31 @@
   }
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 800px) {
   .about {
-    height: 80vh;
+    height: 95vh;
     #about-img {
-      display: none;
+
     }
 
     #knowledge {
-      grid-area: 1/1/span 2/2;
+      grid-area: 1/1/span 2/1;
+      padding-top: 80%;
+    }
+  }
+}
+@media only screen and (max-height: 600px) {
+  .about {
+    height: 90vh;
+    #about-img {
+      display: none;
+
+    }
+
+    #knowledge {
+      padding-top: 10%;
       margin-top: 50%;
+      grid-area: 1/1/span 2/2;
     }
   }
 }
